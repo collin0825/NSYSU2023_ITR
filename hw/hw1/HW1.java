@@ -88,15 +88,23 @@ public class HW1 {
 		*/
 		public boolean union(int p, int q) {
 			// 如果已倒塌則回傳false
-			if(collapsed == true) return false;
-
+			if(collapsed == true){
+				return false;
+			}
+			
 			// 如果q原本不存在則回傳false
-			if(parent[q] == -1) return false;
+			if(parent[q] == -1){
+				return false;
+			}
+
 			int parentP = parent[p];
 			int parentQ = parent[q];
 
 			// 如果欲union的兩點已連結則回傳true
-			if (parentP == q || parentQ == p)  return true;
+			if (parentP == q || parentQ == p){
+				return true;
+			}
+			// 進行連接
 			parent[p] = q;
 			count--;
 			return true;
