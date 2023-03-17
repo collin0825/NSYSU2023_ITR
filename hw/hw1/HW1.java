@@ -161,7 +161,6 @@ public class HW1 {
 							}
 						}
 						if(j == p){
-							parent[i] = -1;  
 							heightArr[i] = -1;
 							amount++; //若i跟p在同一棵樹，且i的高度>被切掉的p，則i也會被切掉
 						}
@@ -170,6 +169,9 @@ public class HW1 {
 				parent[p] = -1;
 				//找看看最maxdepth是否存在，存在的話樹不會倒。
 				for(int i=0; i<N; i++) {
+					if(heightArr[i] == -1){
+						parent[i] = -1;
+					}
 					if(heightArr[i] == maxDepth && i != p){
 						collapsed=false;
 						break;
@@ -190,7 +192,6 @@ public class HW1 {
 							}
 						}
 						if(j == q){
-							parent[i] = -1;
 							heightArr[i] = -1;
 							amount++;//若i跟q在同一棵樹，且i的高度>被切掉的p，則i也會被切掉
 						}
@@ -199,6 +200,9 @@ public class HW1 {
 				parent[q] = -1;
 				//找看看最maxdepth是否存在，存在的話樹不會倒。
 				for(int i=0; i<N; i++) {
+					if(heightArr[i] == -1){
+						parent[i] = -1;
+					}
 					if(heightArr[i] == maxDepth && i != q){
 						collapsed=false;
 						break;
