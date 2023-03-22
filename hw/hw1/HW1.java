@@ -149,9 +149,9 @@ public class HW1 {
 
 			//若p為上面的點
 			if(heightArr[p] > heightArr[q] && collapsed==false){
-				amount = 1;  //p先切掉，先進行計算
+				amount = 1;  //p先切掉
 				for(int i = 0; i < N; i++) {
-					if(find(i) == find(p) && heightArr[i] > heightArr[p]) {
+					if(connected(i, p) && heightArr[i] > heightArr[p]) {
 						// 檢測是否為同一分支
 						int j = i;
 						while(j != p){
@@ -180,9 +180,9 @@ public class HW1 {
 					}
 				}
 			}else if (heightArr[q] > heightArr[p] && collapsed==false){//若q為上面的點
-				amount = 1;  //q先切掉，先進行計算
+				amount = 1;  //q先切掉
 				for(int i=0; i<N; i++) {
-					if(find(i) == find(q) && heightArr[i] > heightArr[q]) {
+					if(connected(i, q) && heightArr[i] > heightArr[q]) {
 						// 檢測是否為同一分支
 						int j = i;
 						while(j != q){
