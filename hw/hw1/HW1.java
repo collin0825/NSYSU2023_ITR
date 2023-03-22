@@ -150,6 +150,7 @@ public class HW1 {
 			//若p為上面的點
 			if(heightArr[p] > heightArr[q] && collapsed==false){
 				amount = 1;  //p先切掉
+				heightArr[p] = -1;
 				for(int i = 0; i < N; i++) {
 					if(connected(i, p) && heightArr[i] > heightArr[p]) {
 						// 檢測是否為同一分支
@@ -166,7 +167,6 @@ public class HW1 {
 						}
 					}
 				}
-				parent[p] = -1;
 				//找看看最maxdepth是否存在，存在的話樹不會倒。
 				for(int i=0; i<N; i++) {
 					if(heightArr[i] == -1){
@@ -181,6 +181,7 @@ public class HW1 {
 				}
 			}else if (heightArr[q] > heightArr[p] && collapsed==false){//若q為上面的點
 				amount = 1;  //q先切掉
+				heightArr[q] = -1;
 				for(int i=0; i<N; i++) {
 					if(connected(i, q) && heightArr[i] > heightArr[q]) {
 						// 檢測是否為同一分支
@@ -197,7 +198,6 @@ public class HW1 {
 						}
 					}
 				}
-				parent[q] = -1;
 				//找看看最maxdepth是否存在，存在的話樹不會倒。
 				for(int i=0; i<N; i++) {
 					if(heightArr[i] == -1){
