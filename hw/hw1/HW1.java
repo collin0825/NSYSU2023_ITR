@@ -172,7 +172,7 @@ public class HW1 {
 					if(heightArr[i] == -1){
 						parent[i] = -1;
 					}
-					if(heightArr[i] == maxDepth && i != p){
+					if(heightArr[i] == maxDepth){
 						collapsed=false;
 						break;
 					}else{
@@ -203,7 +203,7 @@ public class HW1 {
 					if(heightArr[i] == -1){
 						parent[i] = -1;
 					}
-					if(heightArr[i] == maxDepth && i != q){
+					if(heightArr[i] == maxDepth){
 						collapsed=false;
 						break;
 					}else{
